@@ -4,11 +4,26 @@
         <meta charset="utf-8">
         <title>Simple Pet Shop</title>
     </head>
-    <body>
+    <body ng-app="App">
 
 
+        <nav>
+            <a href="/#/">Home</a>
+            <a href="/#/about">About</a>
+            <a href="/#/contact">Contact</a>
+            <a href="/#/pets">Pets</a>
+            <a href="/#/stores">Stores</a>
+
+        <div ui-view></div>
 
         <script src="/lib/angular/angular.js"></script>
         <script src="/lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="/js/App.js"></script>
+        <script src="/js/HomeController.js"></script>
+        <script src="/js/AboutController.js"></script>
+        <script src="/js/ContactController.js"></script>
+        <script src="/js/PetsController.js"></script>
+        <script src="/js/StoresController.js"></script>
+        <script src="/js/HttpController.js"></script>
     </body>
 </html>

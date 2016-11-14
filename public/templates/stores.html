@@ -1,0 +1,14 @@
+<h2>Our Store Locations</h2>
+
+<ul>
+    <li ng-repeat="store in storesController.storeList">
+        <div class = "stores">
+            <strong>Store Name:</strong>{{store.storeName}}
+            <strong>Address:</strong>{{store.address}}
+            <strong>City:</strong>{{store.city}}
+            <strong>State:</strong>{{store.state}}
+            <strong>Postal Code:</strong>{{store.postalCode}}
+
+        </div>
+    </li>
+</ul>

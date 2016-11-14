@@ -1,0 +1,51 @@
+{
+    "test": {
+        "message": "This is a simple message"
+    },
+    "someroute": {
+        "message": "You have hit the test route"
+    },
+    "pets": [
+        {
+            "name": " MeowPaws",
+            "category": " Cat",
+            "breed": " Unknown",
+            "adoptionPrice": " $50"
+        },
+        {
+            "name": " Pepper",
+            "category": " Dog",
+            "breed": " Mutt",
+            "adoptionPrice": " $40"
+        },
+        {
+            "name": " Tweeter",
+            "category": " Bird",
+            "breed": " Parakeet",
+            "adoptionPrice": " $60"
+        }
+    ],
+    "stores": [
+        {
+            "storeName": " The Litter Box",
+            "address": " 3534 E. Copper Rd.",
+            "city": " Scranton",
+            "state": " PA",
+            "postalCode": " 25398"
+        },
+        {
+            "storeName": " The Litter Box",
+            "address": " 90 W. Vista Dr.",
+            "city": " Meridian",
+            "state": " ID",
+            "postalCode": " 83669"
+        },
+        {
+            "storeName": " The Litter Box",
+            "address": " 5575 Haydn Rd.",
+            "city": " Scottsdale",
+            "state": " AZ",
+            "postalCode": " 85250"
+        }
+    ]
+}

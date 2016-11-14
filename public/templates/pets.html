@@ -1,0 +1,13 @@
+<h2>Our Pets!</h2>
+
+<ul>
+    <li ng-repeat="pet in petsController.petList">
+        <div class = "pets">
+            <strong>Name:</strong>{{pet.name}}
+            <strong>Category:</strong>{{pet.category}}
+            <strong>Breed:</strong>{{pet.breed}}
+            <strong>Adoption Price:</strong>{{pet.adoptionPrice}}
+
+        </div>
+    </li>
+</ul>
