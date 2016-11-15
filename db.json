@@ -1,51 +1,68 @@
 {
-    "test": {
-        "message": "This is a simple message"
+  "test": {
+    "message": "This is a simple message"
+  },
+  "someroute": {
+    "message": "You have hit the test route"
+  },
+  "pets": [
+    {
+      "name": " MeowPaws",
+      "category": " Cat",
+      "breed": " Unknown",
+      "adoptionPrice": " $50",
+      "imageUrl": "https://i.ytimg.com/vi/tntOCGkgt98/maxresdefault.jpg",
+      "id": "1"
     },
-    "someroute": {
-        "message": "You have hit the test route"
+    {
+      "name": " Pepper",
+      "category": " Dog",
+      "breed": " Mutt",
+      "adoptionPrice": " $40",
+      "imageUrl": "http://www.dailypicsupdate.com/wp-content/uploads/2012/12/White-black-dog-wide-pocs.jpg",
+      "id": "2"
     },
-    "pets": [
-        {
-            "name": " MeowPaws",
-            "category": " Cat",
-            "breed": " Unknown",
-            "adoptionPrice": " $50"
-        },
-        {
-            "name": " Pepper",
-            "category": " Dog",
-            "breed": " Mutt",
-            "adoptionPrice": " $40"
-        },
-        {
-            "name": " Tweeter",
-            "category": " Bird",
-            "breed": " Parakeet",
-            "adoptionPrice": " $60"
-        }
-    ],
-    "stores": [
-        {
-            "storeName": " The Litter Box",
-            "address": " 3534 E. Copper Rd.",
-            "city": " Scranton",
-            "state": " PA",
-            "postalCode": " 25398"
-        },
-        {
-            "storeName": " The Litter Box",
-            "address": " 90 W. Vista Dr.",
-            "city": " Meridian",
-            "state": " ID",
-            "postalCode": " 83669"
-        },
-        {
-            "storeName": " The Litter Box",
-            "address": " 5575 Haydn Rd.",
-            "city": " Scottsdale",
-            "state": " AZ",
-            "postalCode": " 85250"
-        }
-    ]
+    {
+      "name": " Tweeter",
+      "category": " Bird",
+      "breed": " Parakeet",
+      "adoptionPrice": " $50",
+      "imageUrl": "https://lafeber.com/pet-birds/wp-content/uploads/Parakeet-Category-Image-300x300.jpg",
+      "id": "3"
+    },
+    {
+      "name": "Floater",
+      "category": "Fish",
+      "breed": "Guppy",
+      "adoptionPrice": "$50",
+      "imageUrl": "https://i.ytimg.com/vi/IsJMyILWdz0/hqdefault.jpg",
+      "id": "SJWYizKWg"
+    }
+  ],
+  "stores": [
+    {
+      "name": " The Litter Box",
+      "address": " 3534 E. Copper Rd.",
+      "city": " Scranton",
+      "state": " PA",
+      "postalCode": " 25398",
+      "id": "1"
+    },
+    {
+      "name": " The Litter Box",
+      "address": " 90 W. Vista Dr.",
+      "city": " Meridian",
+      "state": " ID",
+      "postalCode": " 83669",
+      "id": "2"
+    },
+    {
+      "name": " The Litter Box",
+      "address": " 5575 Haydn Rd.",
+      "city": " Scottsdale",
+      "state": " AZ",
+      "postalCode": " 85250",
+      "id": "3"
+    }
+  ]
 }

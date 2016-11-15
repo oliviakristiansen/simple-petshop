@@ -1,0 +1,25 @@
+<h2>Edit Pets</h2>
+
+<form>
+    <label>Name: </label>
+    <input ng-model = "petsEditController.pet.name">
+    <br>
+
+    <label>Category: </label>
+    <input ng-model = "petsEditController.pet.category">
+    <br>
+
+    <label>Breed: </label>
+    <input ng-model = "petsEditController.pet.breed">
+    <br>
+
+    <label>Adoption Price: </label>
+    <input ng-model = "petsEditController.pet.adoptionPrice">
+    <br>
+
+    <labe>Image Url: </label>
+    <input ng-model = "petsEditController.pet.imageUrl">
+    <br>
+
+    <button ng-click = "petsEditController.savePetChanges ()">Save Changes</button>
+</form>

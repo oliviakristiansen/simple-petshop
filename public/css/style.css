@@ -1,0 +1,16 @@
+body {
+    background-color: #dadada;
+    padding: 20px;
+}
+
+.pets {
+    background-color: #CEF9CD;
+    border: 1px solid #878787;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+img {
+    height: 225px;
+    width: 300px;
+}

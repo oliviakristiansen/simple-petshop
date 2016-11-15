@@ -11,6 +11,8 @@ namespace App {
         public category;
         public breed;
         public adoptionPrice;
+        public currentPet;
+        public imageUrl;
 
 
 
@@ -34,12 +36,6 @@ namespace App {
             this.httpService ({
                 url: '/pets',
                 method: 'GET',
-                data: {
-                    name: this.name,
-                    category: this.category,
-                    breed: this.breed,
-                    adoptionPrice: this.adoptionPrice
-                }
             })
             .success ((response) => {
                 console.log ('Test data: ', response);
@@ -63,12 +59,70 @@ namespace App {
         public getPetsById (id) {
             console.log ('here');
             this.httpService ({
-                url: '/posts',
+                url: '/pets',
                 method: 'GET',
                 params: {
                     id: id
                 }
             })
+            .success ((response) =>{
+                console.log ('Test data: ', response);
+                this.currentPet = response [0]
+            })
+            .error ((response)=>{
+            })
+        }
+
+        public save (id) {
+            console.log ('name: ', this.name);
+            console.log ('category: ', this.category);
+            console.log ('breed: ', this.breed);
+            console.log ('adoptionPrice: ', this.adoptionPrice);
+
+            this.httpService ({
+                url: '/pets',
+                method: 'Post',
+                data: {
+                    name: this.name,
+                    category: this.category,
+                    breed: this.breed,
+                    adoptionPrice: this.adoptionPrice,
+                    imageUrl: this.imageUrl
+                }
+            })
+            .success ((response) => {
+                console.log ('Test data: ', response);
+                this.stateService.reload ()
+            })
+            .error ((response) =>{
+            })
+        }
+
+        public deletePet (id) {
+            console.log ('Deleted!', + id)
+
+            this.httpService ({
+                url: '/pets/' + id,
+                method :'DELETE'
+            })
+            .success ((response) => {
+                console.log ('Pet Deleted Successfully', response);
+                this.stateService.reload ()
+            })
+            .error ((response) => {
+                console.log ('Error Deleting Pet', response);
+            })
+    }
+
+        public editPet (petId) {
+            console.log ('pet id: ' + petId);
+
+            this.stateService.go ('pets-edit',
+                {
+                    id: petId
+                }
+            );
+
         }
     }
 }

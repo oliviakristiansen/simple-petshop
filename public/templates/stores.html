@@ -3,12 +3,28 @@
 <ul>
     <li ng-repeat="store in storesController.storeList">
         <div class = "stores">
-            <strong>Store Name:</strong>{{store.storeName}}
+            <strong>Store Name:</strong>{{store.name}}
             <strong>Address:</strong>{{store.address}}
             <strong>City:</strong>{{store.city}}
             <strong>State:</strong>{{store.state}}
             <strong>Postal Code:</strong>{{store.postalCode}}
+            <button ng-click="storesController.editStore(store.id)">Edit Store</button>
+            <button ng-click="storesController.deleteStore(store.id)">Delete Store</button>
 
         </div>
     </li>
 </ul>
+
+<form ng-submit = "storesController.save ()">
+    <strong>Name</strong>
+    <input name="name" ng-model="storesController.name"> <br>
+    <strong>Address</strong>
+    <input name="address" ng-model="storesController.address"> <br>
+    <strong>City</strong>
+    <input name="city" ng-model="storesController.city"> <br>
+    <strong>State</strong>
+    <input name="state" ng-model="storesController.state"> <br>
+    <strong>Postal Code</strong>
+    <input name="postalCode" ng-model="storesController.postalCode"> <br>
+    <button type="submit">Add New Store</button>
+</form>

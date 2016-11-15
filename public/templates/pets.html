@@ -3,11 +3,29 @@
 <ul>
     <li ng-repeat="pet in petsController.petList">
         <div class = "pets">
-            <strong>Name:</strong>{{pet.name}}
-            <strong>Category:</strong>{{pet.category}}
-            <strong>Breed:</strong>{{pet.breed}}
-            <strong>Adoption Price:</strong>{{pet.adoptionPrice}}
+            <strong>Name:</strong>{{pet.name}}<br>
+            <strong>Category:</strong>{{pet.category}}<br>
+            <strong>Breed:</strong>{{pet.breed}}<br>
+            <strong>Adoption Price:</strong>{{pet.adoptionPrice}}<br>
+            <img ng-src = "{{pet.imageUrl}}"><br>
+            <button ng-click="petsController.editPet(pet.id)">Edit Pet</button>
+            <button ng-click="petsController.deletePet(pet.id)">Delete Pet</button>
+
 
         </div>
     </li>
 </ul>
+
+<form ng-submit = "petsController.save ()">
+    <strong>Name</strong>
+    <input name="name" ng-model="petsController.name"> <br>
+    <strong>Category</strong>
+    <input name="category" ng-model="petsController.category"> <br>
+    <strong>Breed</strong>
+    <input name="breed" ng-model="petsController.breed"> <br>
+    <strong>Adoption Price</strong>
+    <input name="adoptionPrice" ng-model="petsController.adoptionPrice"> <br>
+    <strong>Image URL</strong>
+    <input name="imageUrl" ng-model="petsController.imageUrl"> <br>
+    <button type="submit">Add New Pet</button>
+</form>

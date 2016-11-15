@@ -1,0 +1,25 @@
+<h2>Edit Stores</h2>
+
+<form>
+    <label>Name: </label>
+    <input ng-model = "storesEditController.store.name">
+    <br>
+
+    <label>Address: </label>
+    <input ng-model = "storesEditController.store.address">
+    <br>
+
+    <label>City: </label>
+    <input ng-model = "storesEditController.store.city">
+    <br>
+
+    <label>State: </label>
+    <input ng-model = "storesEditController.store.state">
+    <br>
+
+    <label>Postal Code: </label>
+    <input ng-model = "storesEditController.store.postalCode">
+    <br>
+
+    <button ng-click = "storesEditController.saveStoreChanges ()">Save Changes</button>
+</form>

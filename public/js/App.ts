@@ -36,6 +36,24 @@ namespace App {
                     controller: App.StoresController,
                     controllerAs: 'storesController'
                 })
+                .state ('pets-edit', {
+                    url:'/pets/edit',
+                    templateUrl: 'templates/pets-edit.html',
+                    controller: App.PetsEditController,
+                    controllerAs: 'petsEditController',
+                    params: {
+                        id: null
+                    }
+                })
+                .state ('stores-edit', {
+                    url:'/stores/edit',
+                    templateUrl: 'templates/stores-edit.html',
+                    controller: App.StoresEditController,
+                    controllerAs: 'storesEditController',
+                    params: {
+                        id: null
+                    }
+                })
         }
     ])
 }
