@@ -1,18 +1,24 @@
 namespace App {
     export class PetsEditController {
-        static $inject = ['$http', '$state']
+        static $inject = ['$http', '$state', 'PetService']
 
         private stateService;
         private httpService;
+        private petService;
+        private updateId;
 
         public pet;
 
         constructor (
             $http: angular.IHttpService,
-            $state: angular.ui.IState
+            $state: angular.ui.IState,
+            petService: App.PetService
         ) {
             this.httpService = $http;
             this.stateService = $state;
+            this.petService = petService;
+
+            this.updateId = this.stateService.params.id;
 
             console.log ('Passed parameters: ', this.stateService.params.id);
             this.httpService({
@@ -30,22 +36,12 @@ namespace App {
 
         public savePetChanges () {
             console.log ('clicked');
-            this.httpService ({
-                url:'/pets/' + this.stateService.params.id,
-                method: 'PUT',
-                data: {
-                    name: this.pet.name,
-                    category: this.pet.category,
-                    breed: this.pet.breed,
-                    adoptionPrice: this.pet.adoptionPrice,
-                    imageUrl: this.pet.imageUrl
-                }
-            })
+            this.petService.update (this.updateId, this.pet)
             .success ((response) => {
-                console.log (response);
+                console.log ('Data saved.');
                 this.stateService.go ('pets')
             })
-            .error (() => {
+            .error ((response) => {
 
             })
         }

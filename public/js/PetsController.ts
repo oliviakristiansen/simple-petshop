@@ -4,6 +4,7 @@ namespace App {
 
         private httpService;
         private stateService;
+        private petService;
 
         public petList;
         public newPet;
@@ -17,10 +18,12 @@ namespace App {
 
 
         constructor ($http: angular.IHttpService,
-            $state: angular.ui.IState
+            $state: angular.ui.IState,
+            petService: App.PetService
         ) {
             this.httpService = $http;
             this.stateService = $state;
+            this.petService = petService;
 
             console.log ('test:', this.stateService);
 
@@ -33,10 +36,7 @@ namespace App {
 
         public getPetList () {
             console.log ('here');
-            this.httpService ({
-                url: '/pets',
-                method: 'GET',
-            })
+            this.petService.getPetList ()
             .success ((response) => {
                 console.log ('Test data: ', response);
                 this.petList = response;
@@ -47,24 +47,17 @@ namespace App {
 
         public getPets (id) {
             console.log ('here');
-            this.httpService ({
-                url:'/posts',
-                method: 'GET',
-                params: {
-                    id: id
-                }
-            })
+            this.petService.getPets (id)
+                .success ((response) => {
+                })
+                .error ((response) => {
+                    console.error ('There was an error')
+                })
         }
 
         public getPetsById (id) {
             console.log ('here');
-            this.httpService ({
-                url: '/pets',
-                method: 'GET',
-                params: {
-                    id: id
-                }
-            })
+            this.petService.getPetsById (id)
             .success ((response) =>{
                 console.log ('Test data: ', response);
                 this.currentPet = response [0]
@@ -79,16 +72,12 @@ namespace App {
             console.log ('breed: ', this.breed);
             console.log ('adoptionPrice: ', this.adoptionPrice);
 
-            this.httpService ({
-                url: '/pets',
-                method: 'Post',
-                data: {
-                    name: this.name,
-                    category: this.category,
-                    breed: this.breed,
-                    adoptionPrice: this.adoptionPrice,
-                    imageUrl: this.imageUrl
-                }
+            this.petService.save ({
+                name: this.name,
+                category: this.category,
+                breed: this.breed,
+                adoptionPrice: this.adoptionPrice,
+                imageUrl: this.imageUrl
             })
             .success ((response) => {
                 console.log ('Test data: ', response);
@@ -101,10 +90,7 @@ namespace App {
         public deletePet (id) {
             console.log ('Deleted!', + id)
 
-            this.httpService ({
-                url: '/pets/' + id,
-                method :'DELETE'
-            })
+            this.petService.deletePet (id)
             .success ((response) => {
                 console.log ('Pet Deleted Successfully', response);
                 this.stateService.reload ()
