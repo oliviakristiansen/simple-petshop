@@ -1,6 +1,6 @@
 namespace App {
     export class PetsController {
-        static $inject = ['$http', '$state'];
+        static $inject = ['$http', '$state', 'PetService'];
 
         private httpService;
         private stateService;
