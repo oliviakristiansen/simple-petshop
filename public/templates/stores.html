@@ -8,23 +8,32 @@
             <strong>City:</strong>{{store.city}}
             <strong>State:</strong>{{store.state}}
             <strong>Postal Code:</strong>{{store.postalCode}}
-            <button ng-click="storesController.editStore(store.id)">Edit Store</button>
-            <button ng-click="storesController.deleteStore(store.id)">Delete Store</button>
+            <button class="btn btn-primary" ng-click="storesController.editStore(store.id)">Edit Store</button>
+            <button class="btn btn-danger" ng-click="storesController.deleteStore(store.id)">Delete Store</button>
 
         </div>
     </li>
 </ul>
 
 <form ng-submit = "storesController.save ()">
-    <strong>Name</strong>
-    <input name="name" ng-model="storesController.name"> <br>
-    <strong>Address</strong>
-    <input name="address" ng-model="storesController.address"> <br>
-    <strong>City</strong>
-    <input name="city" ng-model="storesController.city"> <br>
-    <strong>State</strong>
-    <input name="state" ng-model="storesController.state"> <br>
-    <strong>Postal Code</strong>
-    <input name="postalCode" ng-model="storesController.postalCode"> <br>
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="name" ng-model="storesController.name">
+    </div>
+    <div class="form-group">
+        <label for="address">Address</label>
+        <input type="text" class="form-control" id="address" ng-model="storesController.address">
+    </div>
+    <div class="form-group">
+        <label for="city">City</label>
+        <input type="text" class="form-control" id="city" ng-model="storesController.city">
+    </div>
+    <div class="form-group">
+        <label for="state">State</label>
+        <input type="text" class="form-control" id="state" ng-model="storesController.state">
+    </div>
+    <div class="form-group">
+        <label for="postalCode">Postal Code</label>
+        <input type="number" class="form-control" id="postalCode" ng-model="storesController.postalCode"> <br>
     <button type="submit">Add New Store</button>
 </form>

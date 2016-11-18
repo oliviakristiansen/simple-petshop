@@ -21,13 +21,12 @@ namespace App {
             this.updateId = this.stateService.params.id;
 
             console.log ('Passed parameters: ', this.stateService.params.id);
-            this.httpService({
-                url:'/pets/' + this.stateService.params.id,
-                method: 'GET'
-            })
+
+            this.petService.getPetsById (this.updateId)
+
             .success ((response)=>{
                 console.log (response);
-                this.pet = response;
+                this.pet = response [0];
             })
             .error (()=> {
 
@@ -37,13 +36,13 @@ namespace App {
         public savePetChanges () {
             console.log ('clicked');
             this.petService.update (this.updateId, this.pet)
-            .success ((response) => {
-                console.log ('Data saved.');
-                this.stateService.go ('pets')
-            })
-            .error ((response) => {
+                .success ((response) => {
+                    console.log ('Data saved.');
+                    this.stateService.go ('pets')
+                })
+                .error ((response) => {
 
-            })
+                })
         }
     }
 }

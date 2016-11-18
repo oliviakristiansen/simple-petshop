@@ -8,8 +8,8 @@
             <strong>Breed:</strong>{{pet.breed}}<br>
             <strong>Adoption Price:</strong>{{pet.adoptionPrice}}<br>
             <img ng-src = "{{pet.imageUrl}}"><br>
-            <button ng-click="petsController.editPet(pet.id)">Edit Pet</button>
-            <button ng-click="petsController.deletePet(pet.id)">Delete Pet</button>
+            <button class="btn btn-primary" ng-click="petsController.editPet(pet.id)">Edit Pet</button>
+            <button class="btn btn-danger" ng-click="petsController.deletePet(pet.id)">Delete Pet</button>
 
 
         </div>
@@ -17,15 +17,24 @@
 </ul>
 
 <form ng-submit = "petsController.save ()">
-    <strong>Name</strong>
-    <input name="name" ng-model="petsController.name"> <br>
-    <strong>Category</strong>
-    <input name="category" ng-model="petsController.category"> <br>
-    <strong>Breed</strong>
-    <input name="breed" ng-model="petsController.breed"> <br>
-    <strong>Adoption Price</strong>
-    <input name="adoptionPrice" ng-model="petsController.adoptionPrice"> <br>
-    <strong>Image URL</strong>
-    <input name="imageUrl" ng-model="petsController.imageUrl"> <br>
-    <button type="submit">Add New Pet</button>
+    <div class="form-group">
+        <label for="name">Name of pet:</label>
+        <input type="text" class="form-control" id="name" ng-model="petsController.name">
+    </div>
+    <div class="form-group">
+        <label for="category">Category</label>
+        <input type="text" class="form-control" id="category" ng-model="petsController.category">
+    </div>
+    <div class="form-group">
+        <label for="greed">Breed</label>
+        <input type="text" class="form-control" id="breed" ng-model="petsController.breed">
+    </div>
+    <div class="form-group">
+        <label for="adoptionPrice">Adoption Price</label>
+        <input type="number" class="form-control" id="adoptionPrice" ng-model="petsController.adoptionPrice">
+    </div>
+    <div class="form-group">
+        <label for="ImageUrl">Image URL</label>
+        <input type="text" class="form-control" id="imageUrl" ng-model="petsController.imageUrl"><br>
+    <button class="btn btn-primary" type="submit">Add New Pet</button>
 </form>

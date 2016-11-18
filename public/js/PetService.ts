@@ -25,7 +25,9 @@ namespace App {
                 params: {
                     id: id
                 }
-            })
+            });
+
+            return promise;
         }
 
         public getPetsById (id) {
@@ -35,7 +37,9 @@ namespace App {
                 params: {
                     id: id
                 }
-            })
+            });
+
+            return promise;
         }
 //
         public save (post) {
@@ -59,8 +63,8 @@ namespace App {
 //
         public update (id, pet) {
             let promise = this.httpService ({
-                url:'/pets/',
-                method: 'POST',
+                url:'/pets/' + id,
+                method: 'PUT',
                 data: pet
             });
 

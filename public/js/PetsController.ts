@@ -51,7 +51,7 @@ namespace App {
                 .success ((response) => {
                 })
                 .error ((response) => {
-                    console.error ('There was an error')
+                    console.log ('There was an error')
                 })
         }
 
@@ -60,7 +60,7 @@ namespace App {
             this.petService.getPetsById (id)
             .success ((response) =>{
                 console.log ('Test data: ', response);
-                this.currentPet = response [0]
+                this.currentPet = response [0];
             })
             .error ((response)=>{
             })

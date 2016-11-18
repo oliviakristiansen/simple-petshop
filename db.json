@@ -7,7 +7,7 @@
   },
   "pets": [
     {
-      "name": " MeowPaws",
+      "name": "MeowPaws",
       "category": " Cat",
       "breed": " Unknown",
       "adoptionPrice": " $50",
@@ -37,9 +37,6 @@
       "adoptionPrice": "$50",
       "imageUrl": "https://i.ytimg.com/vi/IsJMyILWdz0/hqdefault.jpg",
       "id": "SJWYizKWg"
-    },
-    {
-      "id": "BJyyChs-x"
     }
   ],
   "stores": [

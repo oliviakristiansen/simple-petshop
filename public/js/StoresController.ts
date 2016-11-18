@@ -1,20 +1,24 @@
 namespace App {
     export class StoresController {
-        static $inject = ['$http', '$state'];
+        static $inject = ['$http', '$state', 'StoreService'];
 
         private httpService;
         private stateService;
+        private storeService;
 
         public storeList;
         public newStore;
+        public currentStore;
 
 
 
         constructor ($http: angular.IHttpService,
-            $state: angular.ui.IState
+            $state: angular.ui.IState,
+            storeService: App.StoreService
         ) {
             this.httpService = $http;
             this.stateService = $state;
+            this.storeService = storeService;
 
             console.log ('test:', this.stateService);
 
@@ -27,10 +31,7 @@ namespace App {
 
         public getStoreList () {
             console.log ('here');
-            this.httpService ({
-                url: '/stores',
-                method: 'GET',
-            })
+            this.storeService.getStoreList ()
             .success ((response) => {
                 console.log ('Test data: ', response);
                 this.storeList = response;
@@ -48,6 +49,11 @@ namespace App {
                     id: id
                 }
             })
+            .success ((response) => {
+            })
+            .error ((response) => {
+                console.log ('There was an error')
+            })
         }
 
         public getStoresById (id) {
@@ -58,6 +64,12 @@ namespace App {
                 params: {
                     id: id
                 }
+            })
+            .success ((response) =>{
+                console.log ('Test data: ', response);
+                this.currentStore = response [0];
+            })
+            .error ((response)=>{
             })
         }
 
